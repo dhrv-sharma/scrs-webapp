@@ -212,21 +212,22 @@ class _HomeState extends State<Home> {
                         children: [
                           Container(
                             width: MediaQuery.of(context).size.width * 0.28,
+                            height: MediaQuery.of(context).size.height * 0.50,
                             decoration: BoxDecoration(
-                                color: Colors.black54.withOpacity(0.28),
-                                borderRadius: BorderRadius.circular(14)),
+                              color: Colors.black54.withOpacity(0.28),
+                              borderRadius: BorderRadius.circular(14),
+                            ),
                             child: Container(
                               padding:
                                   const EdgeInsets.all(10).copyWith(bottom: 15),
-                              child: const Expanded(
-                                child: Text(
-                                  "Offering educational programs, workshops, and  training sessions to build capacity and expertise in soft computing technologies. This helps individuals contribute to SDG-related projects.",
-                                  style: TextStyle(
-                                      fontSize: 23,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w600),
-                                  textAlign: TextAlign.left,
+                              child: Text(
+                                "Offering educational programs, workshops, and training sessions to build capacity and expertise in soft computing technologies. This helps individuals contribute to SDG-related projects.",
+                                style: TextStyle(
+                                  fontSize: 23,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600,
                                 ),
+                                textAlign: TextAlign.left,
                               ),
                             ),
                           ),
@@ -243,33 +244,102 @@ class _HomeState extends State<Home> {
                           GestureDetector(
                             onTap: () {
                               Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Redirect_page2()));
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Redirect_page2(),
+                                ),
+                              );
                             },
                             child: Container(
                               width: MediaQuery.of(context).size.width * 0.28,
+                              height: MediaQuery.of(context).size.height * 0.50,
                               decoration: BoxDecoration(
-                                  color: Colors.black54.withOpacity(0.28),
-                                  borderRadius: BorderRadius.circular(14)),
+                                color: Colors.black54.withOpacity(0.28),
+                                borderRadius: BorderRadius.circular(14),
+                              ),
                               child: Container(
                                 padding: const EdgeInsets.all(10)
                                     .copyWith(bottom: 15),
-                                child: const Expanded(
-                                  child: Text(
-                                    "Utilizing machine learning and deep learning to analyze large datasets for social good, identifying patterns and insights that can inform evidence-based decision-making in support of SDGs.",
-                                    style: TextStyle(
-                                        fontSize: 23,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w600),
-                                    textAlign: TextAlign.left,
+                                child: Text(
+                                  "Utilizing machine learning and deep learning to analyze large datasets for social good, identifying patterns and insights that can inform evidence-based decision-making in support of SDGs.",
+                                  style: TextStyle(
+                                    fontSize: 23,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w600,
                                   ),
+                                  textAlign: TextAlign.left,
                                 ),
                               ),
                             ),
                           ),
                         ],
                       ),
+
+                      // child: Row(
+                      //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      //   children: [
+                      //     Container(
+                      //       width: MediaQuery.of(context).size.width * 0.28,
+                      //       height: MediaQuery.of(context).size.height * 0.50,
+                      //       decoration: BoxDecoration(
+                      //           color: Colors.black54.withOpacity(0.28),
+                      //           borderRadius: BorderRadius.circular(14)),
+                      //       child: Container(
+                      //         padding:
+                      //             const EdgeInsets.all(10).copyWith(bottom: 15),
+                      //         child: const Expanded(
+                      //           child: Text(
+                      //             "Offering educational programs, workshops, and  training sessions to build capacity and expertise in soft computing technologies. This helps individuals contribute to SDG-related projects.",
+                      //             style: TextStyle(
+                      //                 fontSize: 23,
+                      //                 color: Colors.white,
+                      //                 fontWeight: FontWeight.w600),
+                      //             textAlign: TextAlign.left,
+                      //           ),
+                      //         ),
+                      //       ),
+                      //     ),
+                      //     Container(
+                      //       child: ClipRRect(
+                      //         borderRadius: BorderRadius.circular(20),
+                      //         child: Image.asset(
+                      //           "images/check.jpg",
+                      //           height: 290,
+                      //           fit: BoxFit.fill,
+                      //         ),
+                      //       ),
+                      //     ),
+                      //     GestureDetector(
+                      //       onTap: () {
+                      //         Navigator.push(
+                      //             context,
+                      //             MaterialPageRoute(
+                      //                 builder: (context) => Redirect_page2()));
+                      //       },
+                      //       child: Container(
+                      //         width: MediaQuery.of(context).size.width * 0.28,
+                      //         height: MediaQuery.of(context).size.height * 0.50,
+                      //         decoration: BoxDecoration(
+                      //             color: Colors.black54.withOpacity(0.28),
+                      //             borderRadius: BorderRadius.circular(14)),
+                      //         child: Container(
+                      //           padding: const EdgeInsets.all(10)
+                      //               .copyWith(bottom: 15),
+                      //           child: const Expanded(
+                      //             child: Text(
+                      //               "Utilizing machine learning and deep learning to analyze large datasets for social good, identifying patterns and insights that can inform evidence-based decision-making in support of SDGs.",
+                      //               style: TextStyle(
+                      //                   fontSize: 23,
+                      //                   color: Colors.white,
+                      //                   fontWeight: FontWeight.w600),
+                      //               textAlign: TextAlign.left,
+                      //             ),
+                      //           ),
+                      //         ),
+                      //       ),
+                      //     ),
+                      //   ],
+                      // ),
                     ),
                   ),
                 ],
