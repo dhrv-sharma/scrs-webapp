@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:webapp/page.dart';
+import 'package:webapp/page2.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -111,7 +113,7 @@ class _HomeState extends State<Home> {
           Stack(
             children: [
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 10),
+                margin: const EdgeInsets.symmetric(horizontal: 10),
                 child: Image.asset(
                   "images/bgd.jpeg",
                   height: MediaQuery.of(context).size.height * 0.85,
@@ -197,12 +199,85 @@ class _HomeState extends State<Home> {
                           fontWeight: FontWeight.w600),
                     ),
                   ),
-                  Row(
-                    children: [Container()],
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => page()));
+                    },
+                    child: Container(
+                      padding:
+                          const EdgeInsets.only(left: 45, top: 30, right: 25),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            width: MediaQuery.of(context).size.width * 0.28,
+                            decoration: BoxDecoration(
+                                color: Colors.black54.withOpacity(0.28),
+                                borderRadius: BorderRadius.circular(14)),
+                            child: Container(
+                              padding:
+                                  const EdgeInsets.all(10).copyWith(bottom: 15),
+                              child: const Expanded(
+                                child: Text(
+                                  "Offering educational programs, workshops, and  training sessions to build capacity and expertise in soft computing technologies. This helps individuals contribute to SDG-related projects.",
+                                  style: TextStyle(
+                                      fontSize: 23,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w600),
+                                  textAlign: TextAlign.left,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Image.asset(
+                                "images/check.jpg",
+                                height: 290,
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Redirect_page2()));
+                            },
+                            child: Container(
+                              width: MediaQuery.of(context).size.width * 0.28,
+                              decoration: BoxDecoration(
+                                  color: Colors.black54.withOpacity(0.28),
+                                  borderRadius: BorderRadius.circular(14)),
+                              child: Container(
+                                padding: const EdgeInsets.all(10)
+                                    .copyWith(bottom: 15),
+                                child: const Expanded(
+                                  child: Text(
+                                    "Utilizing machine learning and deep learning to analyze large datasets for social good, identifying patterns and insights that can inform evidence-based decision-making in support of SDGs.",
+                                    style: TextStyle(
+                                        fontSize: 23,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w600),
+                                    textAlign: TextAlign.left,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ],
               )
             ],
+          ),
+          const SizedBox(
+            height: 5,
           ),
         ],
       ),

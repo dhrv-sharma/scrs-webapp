@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-class Redirect_Page extends StatefulWidget {
-  const Redirect_Page({super.key});
+class page extends StatefulWidget {
+  const page({super.key});
 
   @override
-  State<Redirect_Page> createState() => _Redirect_PageState();
+  State<page> createState() => _pageState();
 }
 
-class _Redirect_PageState extends State<Redirect_Page> {
+class _pageState extends State<page> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: SingleChildScrollView(
-        child:Column(
-          children: [
-             Container(
+    return Scaffold(
+        body: SingleChildScrollView(
+      child: Column(
+        children: [
+          Container(
             margin: const EdgeInsets.only(top: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -108,23 +108,52 @@ class _Redirect_PageState extends State<Redirect_Page> {
             width: double.infinity,
             color: Colors.blue.shade300,
           ),
-          Container(
-            color: Colors.black,
-            height: MediaQuery.of(context).size.height * 0.85,
-            child: Column(
-              children: [
-                const Text(
-                  "Healthcare (SDG 3 - Good Health and Well-being):\n\nDisease Prediction and Diagnosis: ML models can analyze medical data to predict the likelihood of diseases, assist in early diagnosis, and recommend personalized treatment plans.\nDrug Discovery: DL techniques can accelerate drug discovery by analyzing biological data and identifying potential drug candidates.",
-                  style: TextStyle(
-
-                  ),
+          Stack(
+            children: [
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 10),
+                child: Image.asset(
+                  "images/bgtt.jpeg",
+                  height: MediaQuery.of(context).size.height * 0.85,
+                  width: double.infinity,
+                  fit: BoxFit.fitWidth,
                 ),
-              ],
-            ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.only(left: 25, top: 18),
+                    child: const Text(
+                      "Offering educational programs, workshops, and  training sessions to build capacity and expertise in soft computing technologies. This helps individuals contribute to SDG-related projects.",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 23,
+                          fontWeight: FontWeight.w700),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 4,
+                  ),
+                  Container(
+                    padding: const EdgeInsets.only(left: 25, top: 18),
+                    child: const Text(
+                      "Healthcare (SDG 3 - Good Health and Well-being):\n\nDisease Prediction and Diagnosis: ML models can analyze medical data to predict the likelihood of diseases, assist in early diagnosis, and recommend personalized treatment plans.\nDrug Discovery: DL techniques can accelerate drug discovery by analyzing biological data and identifying potential drug candidates.",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                ],
+              )
+            ],
           ),
-          ],
-        ),
+          const SizedBox(
+            height: 5,
+          ),
+        ],
       ),
-    );
+    ));
   }
 }

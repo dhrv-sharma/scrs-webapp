@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 class Redirect_page2 extends StatefulWidget {
@@ -12,11 +10,11 @@ class Redirect_page2 extends StatefulWidget {
 class _Redirect_page2State extends State<Redirect_page2> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: SingleChildScrollView(
-        child:Column(
-          children: [
-             Container(
+    return Scaffold(
+        body: SingleChildScrollView(
+      child: Column(
+        children: [
+          Container(
             margin: const EdgeInsets.only(top: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -110,23 +108,52 @@ class _Redirect_page2State extends State<Redirect_page2> {
             width: double.infinity,
             color: Colors.blue.shade300,
           ),
-          Container(
-            color: Colors.black,
-            height: MediaQuery.of(context).size.height * 0.85,
-            child: Column(
-              children: [
-                const Text(
-                  "Agriculture (SDG 2 - Zero Hunger):\n\nPrecision Agriculture: ML algorithms can analyze sensor data from fields to optimize irrigation, fertilizer use, and pest control, enhancing crop yield and resource efficiency.\nCrop Disease Detection: DL models can analyze images of crops to identify signs of diseases, enabling timely intervention.",
-                  style: TextStyle(
-
-                  ),
+          Stack(
+            children: [
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 10),
+                child: Image.asset(
+                  "images/bgtt.jpeg",
+                  height: MediaQuery.of(context).size.height * 0.85,
+                  width: double.infinity,
+                  fit: BoxFit.fitWidth,
                 ),
-              ],
-            ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.only(left: 25, top: 18),
+                    child: const Text(
+                      "Utilizing machine learning and deep learning to analyze large datasets for social good, identifying patterns and insights that can inform evidence-based decision-making in support of SDGs.",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 23,
+                          fontWeight: FontWeight.w700),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 4,
+                  ),
+                  Container(
+                    padding: const EdgeInsets.only(left: 25, top: 18),
+                    child: const Text(
+                      "Agriculture (SDG 2 - Zero Hunger):\n\nPrecision Agriculture: ML algorithms can analyze sensor data from fields to optimize irrigation, fertilizer use, and pest control, enhancing crop yield and resource efficiency.\nCrop Disease Detection: DL models can analyze images of crops to identify signs of diseases, enabling timely intervention.",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                ],
+              )
+            ],
           ),
-          ],
-        ),
+          const SizedBox(
+            height: 5,
+          ),
+        ],
       ),
-    );
+    ));
   }
 }
